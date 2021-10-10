@@ -1,75 +1,11 @@
 # Inherit from audio config
 $(call inherit-product, vendor/PixysTheme/config/audio.mk)
 
-# Accents
-PRODUCT_PACKAGES += \
-    AccentColorYellowOverlay \
-    AccentColorVioletOverlay \
-    AccentColorTealOverlay \
-    AccentColorRedOverlay \
-    AccentColorQGreenOverlay \
-    AccentColorPinkOverlay \
-    AccentColorLightPurpleOverlay \
-    AccentColorIndigoOverlay \
-    AccentColorFlatPinkOverlay \
-    AccentColorCyanOverlay \
-    AccentColorBlueGrayOverlay \
-    AccentColorBlueGrayOverlay \
-    AccentColorBlackOverlay \
-    AccentColoriOSBlueOverlay \
-    AccentColorCinnamonOverlay \
-    AccentColorOceanOverlay \
-    AccentColorOrchidOverlay \
-    AccentColorSpaceOverlay \
-    AccentColorGreenOverlay \
-    AccentColorPurpleOverlay \
-    AccentColorMintOverlay \
-     AccentColorAmethystOverlay \
-     AccentColorAquamarineOverlay \
-     AccentColorCarbonOverlay \
-     AccentColorPaletteOverlay \
-     AccentColorSandOverlay \
-     AccentColorTangerineOverlay
+# Overlay
+PRODUCT_PACKAGE_OVERLAYS += vendor/PixysTheme/overlay
 
-# Call Overlay
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/PixysTheme/overlay
-
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += vendor/PixysTheme/overlay
-
-# NavigationBar Gestural Mode Overlays
-PRODUCT_PACKAGES += \
-    GesturalNavigationOverlayLong \
-    GesturalNavigationOverlayMedium \
-    GesturalNavigationOverlayHidden
-
-# Fonts
-include vendor/PixysTheme/fonts.mk
+# Framework overlay needs to be a RRO
+PRODUCT_ENFORCE_RRO_TARGETS += framework-res
 
 # Icon Shapes
-include vendor/PixysTheme/iconshapes.mk
-
-# Custom Overlays
-# Settings
-PRODUCT_PACKAGES += \
-    SystemRavenBlackOverlay \
-    SystemUIRavenBlackOverlay \
-    SystemDark12Overlay \
-    SystemUIDark12Overlay \
-    SystemDarkGrayOverlay \
-    SystemUIDarkGrayOverlay \
-    SystemStyleOverlay \
-    SystemUIStyleOverlay \
-    SystemNightOverlay \
-    SystemUINightOverlay \
-    SystemSolarizedDarkOverlay \
-    SystemUISolarizedDarkOverlay \
-    SystemMaterialOceanOverlay \
-    SystemUIMaterialOceanOverlay \
-    SystemBakedGreenOverlay \
-    SystemUIBakedGreenOverlay \
-    SystemChocoXOverlay \
-    SystemUIChocoXOverlay \
-    SystemDarkAubergineOverlay \
-    SystemUIDarkAubergineOverlay
-
+#include vendor/PixysTheme/iconshapes.mk
